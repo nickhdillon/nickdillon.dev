@@ -28,7 +28,7 @@
                     </p>
 
                     <div class="w-full">
-                        @if ($account->transactions->count() === 0)
+                        @if ($account->transactions()->count() === 0)
                             ${{ Number::format($account->initial_balance ?? 0, 2) }}
                         @else
                             <div class="flex items-center justify-between">

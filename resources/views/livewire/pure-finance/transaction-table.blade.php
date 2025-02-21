@@ -6,7 +6,7 @@
             Transactions
         </h1>
 
-        @if (auth()->user()->accounts->count() > 0)
+        @if (auth()->user()->accounts()->count() > 0)
             <flux:button
                 href="{{ $account ? route('pure-finance.account.transaction-form', $account->id) : route('pure-finance.transaction-form') }}"
                 wire:navigate variant="indigo" size="sm" class="!h-7 sm:!h-8">

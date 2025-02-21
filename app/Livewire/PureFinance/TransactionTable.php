@@ -155,6 +155,14 @@ class TransactionTable extends Component
                 'tags:id,name'
             ])
             ->whereRelation('account', 'user_id', auth()->id())
+            ->addSelect([
+                'cleared_total' => Transaction::selectRaw('COUNT(*)')
+                    ->whereColumn('account_id', 'transactions.account_id')
+                    ->where('status', true),
+                'pending_total' => Transaction::selectRaw('COUNT(*)')
+                    ->whereColumn('account_id', 'transactions.account_id')
+                    ->where('status', false),
+            ])
             ->when($this->account, function (Builder $query): void {
                 $query->whereRelation('account', 'name', $this->account->name);
             })
@@ -195,13 +203,14 @@ class TransactionTable extends Component
                 $query->whereBetween('date', [Carbon::parse($this->date)->toDateString(), now()->toDateString()]);
             })
             ->whereDate('date', '<=', now()->timezone('America/Chicago'))
-            ->latest('id');
+            ->latest('id')
+            ->paginate(25);
 
-        $this->cleared_total = (clone $transactions)->where('status', true)->count();
-        $this->pending_total = (clone $transactions)->where('status', false)->count();
+        $this->cleared_total = $transactions->first()->cleared_total ?? 0;
+        $this->pending_total = $transactions->first()->pending_total ?? 0;
 
         return view('livewire.pure-finance.transaction-table', [
-            'transactions' => $transactions->paginate(25)
+            'transactions' => $transactions
         ]);
     }
 }
