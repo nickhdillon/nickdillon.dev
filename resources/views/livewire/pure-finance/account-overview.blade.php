@@ -42,17 +42,27 @@
                         {{ $account->type->label() }}
                     </p>
 
-                    <p>
-                        <span class="font-semibold">
-                            Balance:
-                        </span>
+                    @if ($account->transactions()->count() === 0)
+                        ${{ Number::format($account->initial_balance ?? 0, 2) }}
+                    @else
+                        <div class="space-y-2.5">
+                            <p>
+                                <span class="font-semibold">
+                                    Available:
+                                </span>
 
-                        @if ($account->transactions->count() === 0)
-                            ${{ Number::format($account->initial_balance ?? 0, 2) }}
-                        @else
-                            ${{ Number::format($account->balance ?? 0, 2) }}
-                        @endif
-                    </p>
+                                ${{ Number::format($account->balance ?? 0, 2) }}
+                            </p>
+
+                            <p>
+                                <span class="font-semibold">
+                                    Cleared:
+                                </span>
+
+                                ${{ Number::format($account->cleared_balance ?? 0, 2) }}
+                            </p>
+                        </div>
+                    @endif
                 </div>
             </div>
 
