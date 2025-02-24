@@ -242,7 +242,7 @@ class TransactionForm extends Component
             ->success()
             ->send();
 
-        return redirect()->route('pure-finance.index');
+        return redirect()->route('pure-finance.account.overview', $this->account_id);
     }
 
     public function render(): View

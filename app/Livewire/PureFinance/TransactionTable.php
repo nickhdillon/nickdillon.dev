@@ -12,7 +12,6 @@ use Illuminate\Support\Collection;
 use App\Models\PureFinance\Account;
 use Illuminate\Contracts\View\View;
 use App\Models\PureFinance\Category;
-use App\Services\PureFinanceService;
 use App\Models\PureFinance\Transaction;
 use Filament\Notifications\Notification;
 use Illuminate\Contracts\Database\Eloquent\Builder;
@@ -37,7 +36,7 @@ class TransactionTable extends Component
 
     public array $selected_accounts = [];
 
-    public Collection $categories;
+    public array $categories = [];
 
     public array $selected_categories = [];
 
@@ -57,11 +56,11 @@ class TransactionTable extends Component
 
     public bool $sort_asc = false;
 
-    public function mount(PureFinanceService $service): void
+    public function mount(): void
     {
-        if (!$this->account) $this->accounts = $service->getAccounts();
+        if (!$this->account) $this->accounts = $this->getAccounts();
 
-        $this->categories = $service->getCategories();
+        $this->getCategories();
 
         if ($this->account) {
             $this->columns = collect($this->columns)
@@ -79,6 +78,29 @@ class TransactionTable extends Component
     public function updatedStatus(): void
     {
         $this->resetPage();
+    }
+
+    public function getAccounts(): Collection
+    {
+        return auth()
+            ->user()
+            ->accounts()
+            ->select('name')
+            ->distinct()
+            ->pluck('name')
+            ->sort();
+    }
+
+    public function getCategories(): void
+    {
+        $this->categories = auth()
+            ->user()
+            ->categories()
+            ->with('children')
+            ->select(['id', 'name', 'parent_id'])
+            ->orderBy('name')
+            ->get()
+            ->toArray();
     }
 
     #[On('clear-filters')]
@@ -188,14 +210,25 @@ class TransactionTable extends Component
             ->when(!empty($this->selected_accounts), function (Builder $query): void {
                 $query->where(function (Builder $query): void {
                     foreach ($this->selected_accounts as $account) {
-                        $query->orWhereRelation('account', 'name', 'like', "%{$account}%");
+                        $query->orWhereRelation('account', 'name', 'like', $account);
                     }
                 });
             })
             ->when(!empty($this->selected_categories), function (Builder $query): void {
                 $query->where(function (Builder $query): void {
-                    foreach ($this->selected_categories as $category) {
-                        $query->orWhereRelation('category', 'name', 'like', "%{$category}%");
+                    foreach ($this->selected_categories as $selected_category) {
+                        $category = Category::query()
+                            ->with('parent')
+                            ->select(['id', 'name', 'parent_id'])
+                            ->where('name', 'like', $selected_category)
+                            ->first();
+
+                        if (!$category->parent()->exists()) {
+                            $query->orWhereRelation('category', 'name', 'like', $category->name)
+                                ->orWhereRelation('category', 'parent_id', $category->id);
+                        } else {
+                            $query->orWhereRelation('category', 'name', 'like', $category->name);
+                        }
                     }
                 });
             })

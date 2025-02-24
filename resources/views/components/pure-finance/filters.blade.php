@@ -168,16 +168,17 @@
                                         <div x-collapse x-show="showCategories"
                                             class="pt-1 border-t border-slate-300 dark:border-slate-700">
                                             @foreach ($categories as $category)
-                                                <label for="selected_category.{{ $category }}"
+                                                <label for="selected_category.{{ $category['name'] }}"
                                                     class="flex items-center py-1">
-                                                    <input id="selected_category.{{ $category }}"
-                                                        name="selected_category.{{ $category }}" type="checkbox"
+                                                    <input id="selected_category.{{ $category['name'] }}"
+                                                        name="selected_category.{{ $category['name'] }}"
+                                                        type="checkbox"
                                                         class="w-4 h-4 text-indigo-600 rounded bg-slate-100 border-slate-300 focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:ring-offset-slate-800 focus:ring-2 dark:bg-slate-700 dark:border-slate-600"
                                                         wire:model.live='selected_categories'
-                                                        value="{{ $category }}" />
+                                                        value="{{ $category['name'] }}" />
 
                                                     <span class="ml-2 text-sm">
-                                                        {{ $category }}
+                                                        {{ $category['name'] }}
                                                     </span>
                                                 </label>
                                             @endforeach

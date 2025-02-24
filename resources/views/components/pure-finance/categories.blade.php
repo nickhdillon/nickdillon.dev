@@ -117,6 +117,7 @@
                 category_id: $wire.entangle('category_id'),
                 categories: $wire.entangle('categories'),
                 search: '',
+
                 get filteredCategories() {
                     return this.categories
                         .map(parent => {
@@ -138,6 +139,7 @@
                         })
                         .filter(Boolean);
                 },
+
                 get selectedCategoryName() {
                     let category = this.categories.find(category => category.id === this.category_id);
 

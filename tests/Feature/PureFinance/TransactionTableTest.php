@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\URL;
 use App\Models\PureFinance\Category;
 use function Pest\Livewire\livewire;
 use App\Models\PureFinance\Transaction;
+use Illuminate\Database\Eloquent\Model;
 use App\Enums\PureFinance\TransactionType;
 use App\Livewire\PureFinance\TransactionTable;
 
@@ -18,7 +19,7 @@ beforeEach(function () {
     $user = User::factory()->create();
 
     if (Category::count() === 0) {
-        $categories = collect([
+        $parent_categories = collect([
             'Personal Income',
             'Pets',
             'Shopping',
@@ -26,10 +27,31 @@ beforeEach(function () {
             'Utilities',
         ]);
 
-        $categories->each(function (string $name) use ($user): void {
-            Category::factory()->for($user)->create([
-                'name' => $name
+        $child_categories = collect([
+            'Paycheck',
+            'Dog Food',
+            'Gifts',
+            'Hotel',
+            'Water'
+        ]);
+
+        $parent_categories = $parent_categories->map(function (string $parent) use ($user): Model {
+            return $user->categories()->create(['name' => $parent]);
+        });
+
+        $parent_index = 0;
+
+        $child_categories->each(function (string $child, int $index) use ($parent_categories, &$parent_index, $user): void {
+            $parent = $parent_categories->get($parent_index);
+
+            $user->categories()->create([
+                'name' => $child,
+                'parent_id' => $parent->id
             ]);
+
+            if (($index + 1) % 2 === 0) {
+                $parent_index++;
+            }
         });
     }
 
@@ -120,10 +142,18 @@ it('can filter by selected accounts', function () {
         ->assertHasNoErrors();
 });
 
-it('can filter by selected categories', function () {
+it('can filter by selected parent with child categories', function () {
     livewire(TransactionTable::class)
         ->set('selected_categories', [
-            auth()->user()->categories->first()->name
+            auth()->user()->categories()->where('parent_id', null)->first()->name
+        ])
+        ->assertHasNoErrors();
+});
+
+it('can filter by child category', function () {
+    livewire(TransactionTable::class)
+        ->set('selected_categories', [
+            auth()->user()->categories()->where('parent_id', !null)->first()->name
         ])
         ->assertHasNoErrors();
 });
