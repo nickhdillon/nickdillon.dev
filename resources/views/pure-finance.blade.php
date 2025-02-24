@@ -12,6 +12,8 @@
                 @livewire('pure-finance.accounts')
 
                 @livewire('pure-finance.planned-spending')
+
+                @livewire('pure-finance.savings-goals')
             </div>
 
             @livewire('pure-finance.transaction-table')
