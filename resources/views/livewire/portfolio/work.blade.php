@@ -52,24 +52,24 @@ new class extends Component {
     }
 }; ?>
 
-<div class="mt-32 px-7 sm:mt-40 text-slate-50">
-    <h1 class="w-9/12 mx-auto text-3xl font-semibold text-center mb-7">
+<div class="mt-32 px-7 sm:mt-40 text-zinc-50">
+    <flux:heading class="w-9/12 mx-auto !text-[32px] font-semibold text-center mb-7">
         My work experience:
-    </h1>
+    </flux:heading>
 
-    <div class="flex justify-center mx-auto border-2 rounded-md bg-[#18192c] md:max-w-xl border-slate-700">
-        <div class="w-10/12 px-2 py-8 rounded-md text-slate-50">
-            <ul class="relative border-l-2 border-slate-700 space-y-14">
+    <div class="flex justify-center p-[3.5px] mx-auto border shadow-lg border-zinc-700 rounded-[12px] bg-zinc-800 md:max-w-xl">
+        <div class="w-full py-6 pl-10 pr-2 border rounded-[8px] border-zinc-700 inset-shadow-lg text-zinc-50 bg-zinc-900">
+            <ul class="relative border-l-2 border-zinc-700 space-y-14">
                 @foreach ($work_experience as $work)
                 <li class="ml-6">
                     <span
-                        class="absolute flex items-center justify-center w-8 h-8 rounded-full -left-4 ring-8 ring-[#18192c] bg-[#18192c]">
+                        class="absolute flex items-center justify-center w-8 h-8 rounded-full -left-4 ring-8 ring-zinc-800 bg-zinc-800">
                         <img class="shadow-lg" src="{{ asset($work['image']) }}" />
                     </span>
 
                     <div class="ml-2 shadow-sm sm:grid sm:grid-cols-2 sm:items-center">
                         <div>
-                            <a class="duration-300 ease-in-out cursor-pointer hover:text-slate-400"
+                            <a class="duration-200 ease-in-out cursor-pointer hover:text-zinc-400"
                                 href="{{ $work['url'] }}" target="_blank">
                                 <h1 class="text-xl font-semibold">
                                     {{ $work['company'] }}

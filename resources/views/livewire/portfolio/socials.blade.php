@@ -31,7 +31,7 @@ new class extends Component {
     <div class="ml-0 duration-300 ease-in-out hover:scale-125">
         <a href="{{ $social['link'] }}" target="_blank">
             <x-dynamic-component :component="$social['icon']"
-                class="w-6 h-6 text-white duration-300 ease-in-out hover:text-pink-500" />
+                class="w-6 h-6 text-white duration-300 ease-in-out hover:text-amber-500" />
         </a>
     </div>
     @endforeach

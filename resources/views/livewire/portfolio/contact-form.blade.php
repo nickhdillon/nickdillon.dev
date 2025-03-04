@@ -36,56 +36,36 @@ new class extends Component {
 }; ?>
 
 <div x-init="() => document.documentElement.classList.add('dark')">
-    <x-modal icon="user-circle" contact variant="pink" wire:submit="sendEmail">
-        <x-slot:button>
-            <div class="relative inline-flex w-full group/button">
-                <div
-                    class="absolute transition-all duration-1000 bg-pink-500 -inset-px rounded-xl blur-lg group-hover/button:opacity-100 group-hover/button:-inset-1 group-hover/button:duration-200 animate-pulse">
-                </div>
-
-                <button class="relative inline-flex items-center justify-center w-full px-4 py-2 text-lg font-bold text-white transition-all duration-300 ease-in-out bg-pink-500 sm:w-auto hover:-rotate-3 hover:scale-110 rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500"
-                    role="button">
-                    Send me a message!
-                </button>
+    <flux:modal.trigger name="contact-form">
+        <div class="relative inline-flex w-full group/button">
+            <div
+                class="absolute transition-all duration-1000 bg-[#ff9b3e] -inset-px rounded-xl blur-lg group-hover/button:opacity-100 group-hover/button:-inset-1 group-hover/button:duration-200 animate-pulse">
             </div>
-        </x-slot:button>
 
-        <x-slot:title>
-            Contact Me
-        </x-slot:title>
+            <button class="relative inline-flex items-center justify-center w-full px-4 py-2 text-lg font-semibold text-white transition-all duration-300 ease-in-out bg-[#ff9b3e] sm:w-auto hover:scale-110 rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ff9b3e]"
+                role="button">
+                Send me a message!
+            </button>
+        </div>
+    </flux:modal.trigger>
 
-        <x-slot:body>
-            <div class="space-y-4 text-left">
-                <div>
-                    <x-input-label for="name" :value="__('Name')" />
+    <flux:modal name="contact-form" class="md:w-96">
+        <form wire:submit='sendEmail' class="space-y-6">
+            <flux:heading size="lg">Contact Me</flux:heading>
 
-                    <x-text-input wire:model="name" id="name"
-                        class="block w-full mt-1 focus:!border-pink-500 focus:!ring-pink-500" type="text"
-                        name="name" required autofocus autocomplete="name" />
+            <flux:input label="Name" />
 
-                    <x-input-error :messages="$errors->get('name')" class="mt-2 !text-pink-500" />
-                </div>
+            <flux:input label="Email" type="email" />
 
-                <div>
-                    <x-input-label for="email" :value="__('Email')" />
+            <flux:textarea label="Message" rows="5" />
 
-                    <x-text-input wire:model="email" id="email"
-                        class="block w-full mt-1 focus:!border-pink-500 focus:!ring-pink-500" type="email"
-                        name="email" required autofocus autocomplete="username" />
+            <div class="flex">
+                <flux:spacer />
 
-                    <x-input-error :messages="$errors->get('email')" class="mt-2 !text-pink-500" />
-                </div>
-
-                <div>
-                    <x-input-label for="message" :value="__('Message')" />
-
-                    <textarea wire:model="message" id="message"
-                        class="w-full mt-1 rounded-md shadow-sm border-slate-700 bg-slate-900 text-slate-300 focus:border-pink-500 focus:ring-pink-500"
-                        name="message" required autofocus autocomplete="message" rows="5"></textarea>
-
-                    <x-input-error :messages="$errors->get('message')" class="mt-2 !text-pink-500" />
-                </div>
+                <flux:button type="submit" variant="primary">Save changes</flux:button>
             </div>
-        </x-slot:body>
-    </x-modal>
+        </form>
+    </flux:modal>
+
+
 </div>

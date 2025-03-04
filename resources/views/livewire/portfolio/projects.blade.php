@@ -26,27 +26,28 @@ new class extends Component {
     }
 }; ?>
 
-<div class="flex flex-col items-center justify-center p-4 mt-24 mb-3 sm:mt-32 text-slate-50">
-    <h1 class="w-7/12 mx-auto mb-8 text-3xl font-semibold text-center sm:mb-6">
+<div class="flex flex-col items-center justify-center p-4 mt-24 mb-4 sm:mt-32 text-zinc-50">
+    <flux:heading class="w-7/12 !text-[32px] font-semibold mx-auto mb-8 text-center">
         A couple of my projects:
-    </h1>
+    </flux:heading>
 
-    <div class="flex flex-col px-3 space-y-8 sm:space-y-0 sm:space-x-8 sm:flex-row text-slate-800">
+    <div class="flex flex-col px-3 space-y-8 sm:space-y-0 sm:space-x-8 sm:flex-row text-zinc-800">
         @foreach ($projects as $project)
-        <a href="{{ $project['url'] }}">
-            <div
-                class="max-w-sm duration-300 ease-in-out bg-white border rounded-lg shadow-2xl border-slate-200 hover:shadow-pink-500 hover:scale-105 hover:-rotate-2">
-                <img class="object-cover w-full h-48 rounded-t-lg sm:h-56" src="{{ asset($project['image']) }}" />
+        <a href="{{ $project['url'] }}"
+            class="max-w-sm duration-200 ease-in-out border rounded-[12px] p-[4px] shadow-xl bg-zinc-800 border-zinc-700 hover:shadow-amber-500/20 hover:scale-105">
+            <div>
+                <img class="object-cover w-full h-48 border rounded-[8px] border-zinc-700 inset-shadow-lg text-zinc-50 bg-zinc-900 sm:h-56"
+                    src="{{ asset($project['image']) }}" />
 
-                <div class="p-4 space-y-1">
-                    <h5 class="text-2xl font-bold tracking-tight">
+                <div class="p-4 -mt-1 space-y-1">
+                    <flux:heading size="xl" class="font-semibold text-zinc-50">
                         {{ $project['title'] }}
-                    </h5>
+                    </flux:heading>
 
                     <ul>
                         @foreach ($project['technologies'] as $tech)
                         <li
-                            class="inline-block px-2 sm:px-2.5 py-0.5 sm:py-[.8px] mr-1 text-[12.5px] sm:text-sm font-semibold text-pink-600 bg-pink-200 rounded-full shadow-xs shadow-pink-200/75">
+                            class="inline-block px-2 sm:px-2.5 py-0.5 sm:py-[.8px] mr-1 text-[12.5px] sm:text-sm font-semibold text-zinc-50 bg-[#ff9b3e] rounded-md shadow-md shadow-amber-500/15">
                             {{ $tech }}
                         </li>
                         @endforeach
@@ -56,9 +57,4 @@ new class extends Component {
         </a>
         @endforeach
     </div>
-
-    <a class="mt-6 font-medium text-pink-400 duration-300 ease-in-out hover:text-pink-300 hover:scale-110"
-        href="{{ route('apps') }}" wire:navigate>
-        View All <span class="inline"> &rarr;</span>
-    </a>
 </div>

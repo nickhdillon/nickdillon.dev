@@ -1,4 +1,4 @@
-<div x-data="snowfall()" class="fixed inset-0 overflow-hidden pointer-events-none" x-show="isChristmasSeason">
+<div x-data="snowfall" class="fixed inset-0 overflow-hidden pointer-events-none" x-show="isChristmasSeason">
     <template x-for="snowflake in snowflakes" :key="snowflake.id">
         <div class="fixed text-white opacity-70"
             x-bind:style="{

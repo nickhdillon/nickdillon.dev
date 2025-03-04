@@ -14,13 +14,14 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     @filamentStyles
-    @fluxStyles
+    @fluxAppearance
     @livewireStyles
 </head>
 
 <body @class([
-    'antialiased bg-slate-100 text-slate-600 dark:bg-slate-900 dark:text-slate-400 font-inter min-h-screen',
-    '!bg-[#18192c] bg-dots text-slate-50' => request()->routeIs('portfolio'),
+    'antialiased bg-zinc-100 text-zinc-600 dark:bg-zinc-900 dark:text-zinc-400 min-h-screen',
+    '!bg-zinc-900 bg-grid bg-repeat text-zinc-50' => request()->routeIs(
+        'portfolio'),
 ]) x-data="{
     sidebarOpen: false,
     sidebarExpanded: localStorage.getItem('sidebar-expanded') == 'true'
