@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Livewire\PureFinance\Accounts;
 use App\Livewire\PureFinance\TagTable;
 use App\Livewire\MovieVault\VaultDetails;
+use App\Livewire\PureFinance\SavingsGoal;
 use App\Livewire\PureFinance\CategoryTable;
 use App\Livewire\PureFinance\AccountOverview;
 use App\Livewire\PureFinance\TransactionForm;
@@ -54,6 +55,9 @@ Route::middleware(['auth'])->group(function () {
 
             Route::get('planned-expense/{expense}', PlannedExpenseView::class)
                 ->name('planned-expense-view');
+
+            Route::get('savings-goal/{goal}', SavingsGoal::class)
+                ->name('savings-goal-view');
         });
 });
 
