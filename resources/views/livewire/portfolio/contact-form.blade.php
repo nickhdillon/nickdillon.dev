@@ -39,10 +39,10 @@ new class extends Component {
     <flux:modal.trigger name="contact-form">
         <div class="relative inline-flex w-full group/button">
             <div
-                class="absolute transition-all duration-1000 bg-[#ff9b3e] -inset-px rounded-xl blur-lg group-hover/button:opacity-100 group-hover/button:-inset-1 group-hover/button:duration-200 animate-pulse">
+                class="absolute transition-all duration-1000 bg-[#f69234] -inset-px rounded-xl blur-lg group-hover/button:opacity-100 group-hover/button:-inset-1 group-hover/button:duration-200 animate-pulse">
             </div>
 
-            <button class="relative inline-flex items-center justify-center w-full px-4 py-2 text-lg font-semibold text-white transition-all duration-300 ease-in-out bg-[#ff9b3e] sm:w-auto hover:scale-110 rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ff9b3e]"
+            <button class="relative inline-flex items-center justify-center w-full px-4 py-2 text-lg font-semibold text-white transition-all duration-300 ease-in-out bg-[#f69234] sm:w-auto hover:scale-110 rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#f69234]"
                 role="button">
                 Send me a message!
             </button>

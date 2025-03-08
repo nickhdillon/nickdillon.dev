@@ -59,7 +59,7 @@ new class extends Component {
 }; ?>
 
 <div class="flex flex-col items-center justify-center mt-32 sm:mt-40 text-zince-50">
-    <flux:heading class="w-9/12 mb-3 !text-[32px] font-semibold text-center">
+    <flux:heading class="w-9/12 mb-3 leading-9 !text-[32px] font-semibold text-center">
         My favorite technologies:
     </flux:heading>
 

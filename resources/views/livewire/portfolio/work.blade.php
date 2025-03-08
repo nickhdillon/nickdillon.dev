@@ -53,7 +53,7 @@ new class extends Component {
 }; ?>
 
 <div class="mt-32 px-7 sm:mt-40 text-zinc-50">
-    <flux:heading class="w-9/12 mx-auto !text-[32px] font-semibold text-center mb-7">
+    <flux:heading class="w-9/12 leading-9 mx-auto !text-[32px] font-semibold text-center mb-7">
         My work experience:
     </flux:heading>
 

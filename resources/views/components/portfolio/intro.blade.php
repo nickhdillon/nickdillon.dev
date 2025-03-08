@@ -12,7 +12,7 @@
                     </span>
 
                     <span
-                        class="absolute bottom-0 left-0 z-10 w-full h-3 transition-all duration-300 ease-out -skew-x-12 bg-[#ff9b3e]">
+                        class="absolute bottom-0 left-0 z-10 w-full h-3 transition-all duration-300 ease-out -skew-x-12 bg-[#f69234]">
                     </span>
                 </div>
             </h1>

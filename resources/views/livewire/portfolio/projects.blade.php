@@ -27,11 +27,11 @@ new class extends Component {
 }; ?>
 
 <div class="flex flex-col items-center justify-center p-4 mt-24 mb-4 sm:mt-32 text-zinc-50">
-    <flux:heading class="w-7/12 !text-[32px] font-semibold mx-auto mb-8 text-center">
+    <flux:heading class="w-7/12 leading-9 !text-[32px] font-semibold mx-auto mb-8 text-center">
         A couple of my projects:
     </flux:heading>
 
-    <div class="flex flex-col px-3 space-y-8 sm:space-y-0 sm:space-x-8 sm:flex-row text-zinc-800">
+    <div class="flex flex-col px-3 space-y-6 sm:space-y-0 sm:space-x-8 sm:flex-row text-zinc-800">
         @foreach ($projects as $project)
         <a href="{{ $project['url'] }}"
             class="max-w-sm duration-200 ease-in-out border rounded-[12px] p-[4px] shadow-xl bg-zinc-800 border-zinc-700 hover:shadow-amber-500/20 hover:scale-105">
@@ -47,7 +47,7 @@ new class extends Component {
                     <ul>
                         @foreach ($project['technologies'] as $tech)
                         <li
-                            class="inline-block px-2 sm:px-2.5 py-0.5 sm:py-[.8px] mr-1 text-[12.5px] sm:text-sm font-semibold text-zinc-50 bg-[#ff9b3e] rounded-md shadow-md shadow-amber-500/15">
+                            class="inline-block px-2 sm:px-2.5 py-0.5 sm:py-[.8px] mr-1 text-[12.5px] sm:text-sm font-semibold text-zinc-50 bg-[#f69234] rounded-md shadow-md shadow-amber-500/15">
                             {{ $tech }}
                         </li>
                         @endforeach
