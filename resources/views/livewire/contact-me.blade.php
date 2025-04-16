@@ -35,7 +35,7 @@ new class extends Component {
     }
 }; ?>
 
-<div>
+<div x-init="() => document.documentElement.classList.add('dark')">
     <flux:modal.trigger name="contact-form">
         <div class="relative inline-flex w-full group/button">
             <div
