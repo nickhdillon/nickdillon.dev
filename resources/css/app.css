@@ -45,12 +45,12 @@
 }
 
 [data-flux-input]>input {
-    @apply h-[38px] !border-white/10;
+    @apply h-[38px];
 }
 
 [data-flux-input]>input,
 [data-flux-textarea] {
-    @apply bg-zinc-800;
+    @apply bg-zinc-800 !border-white/10;
 }
 
 input:focus[data-flux-control],
@@ -59,7 +59,7 @@ textarea:focus[data-flux-control] {
 }
 
 [data-flux-modal]>dialog {
-    @apply bg-zinc-900;
+    @apply bg-zinc-900 !border-zinc-700;
 }
 
 [data-flux-heading],
