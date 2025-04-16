@@ -22,7 +22,7 @@
 
     <div class="flex flex-col px-3 gap-6 sm:gap-8 md:flex-row text-zinc-800">
         @foreach ($projects as $project)
-            <a href="{{ $project['url'] }}"
+            <a href="{{ $project['url'] }}" target="_blank"
                 class="max-w-sm duration-200 ease-in-out border rounded-[12px] p-[4px] shadow-xl bg-zinc-800 border-zinc-700 hover:shadow-accent/20 hover:scale-105">
                 <div>
                     <img class="object-cover w-full h-48 border rounded-[8px] border-zinc-700 inset-shadow-lg text-zinc-50 bg-zinc-900 sm:h-56"
