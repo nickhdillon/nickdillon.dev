@@ -15,7 +15,7 @@
         @livewireStyles
     </head>
 
-    <body class="min-h-screen bg-zinc-900 bg-grid bg-repeat text-zinc-100">
+    <body x-init="() => document.documentElement.classList.add('dark')" class="min-h-screen bg-zinc-900 bg-grid bg-repeat text-zinc-100">
         <x-header />
 
         <x-intro />
