@@ -45,7 +45,7 @@
 }
 
 [data-flux-input]>input {
-    @apply h-[38px];
+    @apply h-[38px] !border-white/10;
 }
 
 [data-flux-input]>input,
