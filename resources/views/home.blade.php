@@ -15,9 +15,7 @@
         @livewireStyles
     </head>
 
-    <body class="min-h-screen bg-zinc-900 text-zinc-100 relative">
-        <div class="absolute top-0 left-0 w-full h-80 bg-gradient-to-b from-zinc-950/50 blur-3xl to-zinc-900 pointer-events-none z-[-1]"></div>
-
+    <body class="min-h-screen bg-linear-to-b from-zinc-900 from-85% to-zinc-950 text-zinc-100">
         <div class="bg-grid bg-repeat">
             <x-header />
 
@@ -33,8 +31,6 @@
 
             <flux:toast />
         </div>
-
-        <div class="absolute bottom-0 left-0 w-full h-60 bg-gradient-to-t from-zinc-950/75 to-zinc-900 pointer-events-none z-[-1]"></div>
         
         @fluxScripts
         @livewireScriptConfig
