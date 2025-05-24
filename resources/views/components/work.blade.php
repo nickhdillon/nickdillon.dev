@@ -1,22 +1,19 @@
 @php
     $calculate_duration = function (string $date): string {
-        $start_date = Carbon\Carbon::parse($date);
-
-        $diff = now()->diff($start_date);
-
-        $years = $diff->y;
-
-        $months = $diff->m;
-
-        return match (true) {
-            $years === 0 && $months === 1 => "{$months} month",
-            $years === 0 && $months !== 1 => "{$months} months",
-            $years === 1 && $months === 0 => "{$years} year",
-            $years === 1 && $months === 1 => "{$years} year {$months} month",
-            $years === 1 && $months !== 1 => "{$years} year {$months} months",
-            $years !== 1 && $months === 0 => "{$years} years",
-            default => "{$years} years {$months} months",
-        };
+        $timezone = 'America/Chicago';
+    
+        $start_date = Carbon\Carbon::parse($date, $timezone);
+        $now = Carbon\Carbon::now($timezone);
+    
+        $total_months = $start_date->diffInMonths($now);
+    
+        $years = intdiv($total_months, 12);
+        $months = $total_months % 12;
+    
+        return collect([
+            $years ? "{$years} " . ($years === 1 ? 'year' : 'years') : null,
+            $months ? "{$months} " . ($months === 1 ? 'month' : 'months') : null,
+        ])->filter()->implode(' ');
     };
 
     $work_experience = [
