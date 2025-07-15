@@ -46,10 +46,10 @@
             <ul class="relative border-l-2 border-zinc-700 space-y-14">
                 @foreach ($work_experience as $work)
                     <li class="ml-6">
-                        <span
-                            class="absolute flex items-center justify-center w-8 h-8 rounded-full! -left-4 ring-8 ring-zinc-800 bg-zinc-800">
-                            <img class="shadow-lg" src="{{ asset($work['image']) }}" />
-                        </span>
+                        <div
+                            class="absolute flex items-center justify-center size-8 -left-4 ring-8 ring-zinc-800 bg-zinc-800 overflow-hidden rounded-full">
+                            <img class="shadow-lg w-full h-full object-cover p-0.5" src="{{ asset($work['image']) }}" />
+                        </div>
 
                         <div class="ml-2 sm:grid sm:grid-cols-2 sm:items-center">
                             <div>
