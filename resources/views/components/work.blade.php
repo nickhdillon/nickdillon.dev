@@ -1,9 +1,11 @@
 @php
+    use Carbon\Carbon;
+
     $calculate_duration = function (string $date): string {
         $timezone = 'America/Chicago';
     
-        $start_date = Carbon\Carbon::parse($date, $timezone);
-        $now = Carbon\Carbon::now($timezone);
+        $start_date = Carbon::parse($date, $timezone);
+        $now = Carbon::now($timezone);
     
         $total_months = $start_date->diffInMonths($now);
     
@@ -47,7 +49,8 @@
                 @foreach ($work_experience as $work)
                     <li class="ml-6">
                         <div class="absolute -left-[21px]">
-                            <flux:avatar src="{{ asset($work['image']) }}" class="p-2 bg-zinc-800 after:inset-ring-[1.5px]! after:inset-ring-zinc-700!" />
+                            <flux:avatar src="{{ asset($work['image']) }}"
+                                class="p-2 bg-zinc-800 after:inset-ring-[1.5px]! after:inset-ring-zinc-700!" />
                         </div>
 
                         <div class="ml-2 sm:grid sm:grid-cols-2 sm:items-center">
