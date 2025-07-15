@@ -47,7 +47,7 @@
                 @foreach ($work_experience as $work)
                     <li class="ml-6">
                         <span
-                            class="absolute flex items-center justify-center w-8 h-8 rounded-full -left-4 ring-8 ring-zinc-800 bg-zinc-800">
+                            class="absolute flex items-center justify-center w-8 h-8 rounded-full! -left-4 ring-8 ring-zinc-800 bg-zinc-800">
                             <img class="shadow-lg" src="{{ asset($work['image']) }}" />
                         </span>
 
