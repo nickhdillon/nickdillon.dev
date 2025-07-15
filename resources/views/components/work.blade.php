@@ -46,9 +46,8 @@
             <ul class="relative border-l-2 border-zinc-700 space-y-14">
                 @foreach ($work_experience as $work)
                     <li class="ml-6">
-                        <div
-                            class="absolute flex items-center justify-center size-8 -left-4 ring-8 ring-zinc-800 bg-zinc-800 overflow-hidden rounded-full">
-                            <img class="shadow-lg w-full h-full object-cover p-0.5" src="{{ asset($work['image']) }}" />
+                        <div class="absolute -left-5">
+                            <flux:avatar src="{{ asset($work['image']) }}" class="p-2 bg-zinc-800" />
                         </div>
 
                         <div class="ml-2 sm:grid sm:grid-cols-2 sm:items-center">
