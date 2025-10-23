@@ -127,10 +127,10 @@
                                 @foreach ($work['positions'] as $position)
                                     <div class="relative flex items-start pl-5">
                                         @if (! $loop->last)
-                                            <span class="absolute left-[0.5px] sm:left-[0.25px] top-[1.1em] bottom-[-1.4em] w-[1.5px] bg-zinc-700"></span>
+                                            <span class="absolute left-[0.5px] sm:left-[0.24px] top-[1em] bottom-[-1.3em] w-[1.5px] bg-zinc-700"></span>
                                         @endif
                             
-                                        <span class="absolute -left-[2px] top-[0.6em] -translate-y-1/2 size-1.5 rounded-full bg-zinc-400"></span>
+                                        <span class="absolute -left-[2px] top-[0.5em] -translate-y-1/2 size-1.5 rounded-full bg-zinc-400"></span>
                             
                                         <div class="ml-4 text-sm flex flex-col">
                                             <h2 class="leading-tight">{{ $position['title'] }}</h2>
