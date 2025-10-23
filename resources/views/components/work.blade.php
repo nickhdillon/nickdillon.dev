@@ -27,14 +27,14 @@
             'positions' => [
                 [
                     'title' => 'Associate Software Developer',
-                    'time' => 'October 2025 - Present',
+                    'time' => 'Oct 2025 - Present',
                     'start_date' => '2025-10-20',
                     'end_date' => null,
                     'duration' => $calculate_duration('2025-10-20'),
                 ],
                 [
                     'title' => 'Digital Applications Developer',
-                    'time' => 'April 2023 - October 2025',
+                    'time' => 'Apr 2023 - Oct 2025',
                     'start_date' => '2023-04-24',
                     'end_date' => '2025-10-19',
                     'duration' => $calculate_duration('2023-04-24', '2025-10-19'),
@@ -48,7 +48,7 @@
             'positions' => [
                 [
                     'title' => 'Full Stack Developer',
-                    'time' => 'May 2021 - July 2021',
+                    'time' => 'May 2021 - Jul 2021',
                     'start_date' => '2021-05-01',
                     'end_date' => '2021-07-01',
                     'duration' => $calculate_duration('2021-05-01', '2021-07-01'),
