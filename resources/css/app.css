@@ -14,16 +14,16 @@
 }
 
 @theme {
-    --color-accent: var(--color-orange-500);
-    --color-accent-content: var(--color-orange-600);
+    --color-accent: var(--color-red-500);
+    --color-accent-content: var(--color-red-600);
     --color-accent-foreground: var(--color-white);
 }
 
 @layer theme {
     .dark {
-        --color-accent: var(--color-orange-500);
-        --color-accent-content: var(--color-orange-400);
-        --color-accent-foreground: var(--color-orange-950);
+        --color-accent: var(--color-red-500);
+        --color-accent-content: var(--color-red-400);
+        --color-accent-foreground: var(--color-red-950);
     }
 }
 
