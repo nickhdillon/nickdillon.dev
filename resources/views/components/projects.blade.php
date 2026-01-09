@@ -1,5 +1,11 @@
 @php
     $projects = [
+        'audio-archive' => [
+            'url' => 'https://audio-archive.app',
+            'image' => 'audio-archive.png',
+            'title' => 'Audio Archive',
+            'technologies' => ['Tailwind', 'Alpine.js', 'Laravel', 'Livewire'],
+        ],
         'pure-finance' => [
             'url' => 'https://pure-finance.app',
             'image' => 'pure-finance.png',
@@ -20,7 +26,7 @@
         A couple of my projects:
     </flux:heading>
 
-    <div class="flex flex-col px-3 gap-6 sm:gap-8 md:flex-row text-zinc-800">
+    <div class="flex flex-col px-3 gap-6 sm:gap-8 lg:flex-row text-zinc-800">
         @foreach ($projects as $project)
             <a href="{{ $project['url'] }}" target="_blank"
                 class="max-w-sm duration-200 ease-in-out border rounded-[12px] p-[4px] shadow-xl bg-zinc-800 border-zinc-700 hover:shadow-accent/20 hover:scale-105">
