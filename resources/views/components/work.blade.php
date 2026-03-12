@@ -124,7 +124,7 @@
                         @if (count($work['positions']) > 1) 
                             <div class="pl-5 mt-3 flex flex-col space-y-5">
                                 <flux:timeline
-                                    class="[--flux-timeline-item-gap:1.5rem] [--flux-timeline-content-gap:2rem]"
+                                    class="[--flux-timeline-item-gap:1.5rem] [--flux-timeline-content-gap:2.1rem] sm:[--flux-timeline-content-gap:2rem]"
                                     align="start"
                                 >
                                     @foreach ($work['positions'] as $position)
