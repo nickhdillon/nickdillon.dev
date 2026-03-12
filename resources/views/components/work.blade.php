@@ -7,11 +7,10 @@
         $start_date = Carbon::parse($start, $timezone);
         $end_date = $end ? Carbon::parse($end, $timezone) : Carbon::now($timezone);
 
-        $months = $start_date->diffInMonths($end_date);
+        $diff = $start_date->diff($end_date);
 
-        $years = intdiv($months, 12);
-
-        $months = $months % 12;
+        $years = $diff->y;
+        $months = $diff->m;
     
         return collect([
             $years ? "{$years} " . ($years === 1 ? 'year' : 'yrs') : null,
@@ -124,29 +123,32 @@
 
                         @if (count($work['positions']) > 1) 
                             <div class="pl-5 mt-3 flex flex-col space-y-5">
-                                @foreach ($work['positions'] as $position)
-                                    <div class="relative flex items-start pl-5">
-                                        @if (! $loop->last)
-                                            <span class="absolute left-[0.5px] sm:left-[0.24px] top-[1em] bottom-[-1.3em] w-[1.5px] bg-zinc-700"></span>
-                                        @endif
-                            
-                                        <span class="absolute -left-[2px] top-[0.5em] -translate-y-1/2 size-1.5 rounded-full bg-zinc-400"></span>
-                            
-                                        <div class="ml-4 text-sm flex flex-col">
-                                            <h2 class="leading-tight">{{ $position['title'] }}</h2>
-                            
-                                            <p class="text-xs text-zinc-400 mt-0.5">
-                                                {{ $position['time'] }}
+                                <flux:timeline
+                                    class="[--flux-timeline-item-gap:1.5rem] [--flux-timeline-content-gap:2rem]"
+                                    align="start"
+                                >
+                                    @foreach ($work['positions'] as $position)
+                                        <flux:timeline.item size="sm" class="-ml-0.5">
+                                            <flux:timeline.indicator variant="bare">
+                                                <div class="size-1.5 rounded-full bg-zinc-400"></div>
+                                            </flux:timeline.indicator>
 
-                                                @if ($position['duration'])
-                                                    <span>•</span>
-                                                @endif
+                                            <flux:timeline.content>
+                                                <flux:heading>{{ $position['title'] }}</flux:heading>
 
-                                                {{ $position['duration'] }}
-                                            </p>
-                                        </div>
-                                    </div>
-                                @endforeach
+                                                <flux:text size="sm">
+                                                    {{ $position['time'] }}
+
+                                                    @if ($position['duration'])
+                                                        <span>•</span>
+                                                    @endif
+
+                                                    {{ $position['duration'] }}
+                                                </flux:text>
+                                            </flux:timeline.content>
+                                        </flux:timeline.item>
+                                    @endforeach
+                                </flux:timeline>
                             </div>                     
                         @endif
                     </li>
