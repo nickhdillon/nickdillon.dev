@@ -18,7 +18,7 @@
         ])->filter()->implode(' ');
     };
 
-    $work_experience = [
+    $experiences = [
         [
             'url' => 'http://graymedia.com/',
             'company' => 'Gray Media',
@@ -56,13 +56,13 @@
         ],
     ];
 
-    $work_experience = collect($work_experience)
-        ->map(function (array $work) use ($calculate_duration, $timezone): array {
-            $start_dates = collect($work['positions'])
+    $experiences = collect($experiences)
+        ->map(function (array $experience) use ($calculate_duration, $timezone): array {
+            $start_dates = collect($experience['positions'])
                 ->pluck('start_date')
                 ->map(fn(string $date): Carbon => Carbon::parse($date, $timezone));
 
-            $end_dates = collect($work['positions'])
+            $end_dates = collect($experience['positions'])
                 ->pluck('end_date')
                 ->map(function (?string $date) use ($timezone): Carbon {
                     return $date ? Carbon::parse($date, $timezone) : Carbon::now($timezone);
@@ -71,63 +71,63 @@
             $earliest = $start_dates->min();
             $latest = $end_dates->max();
 
-            $work['total_duration'] = $calculate_duration($earliest, $latest);
+            $experience['total_duration'] = $calculate_duration($earliest, $latest);
 
-            return $work;
+            return $experience;
         });
 @endphp
 
 <div class="mt-32 px-7 sm:mt-40 text-zinc-50">
-    <flux:heading class="w-9/12 leading-9 mx-auto text-[24px]! font-medium text-center mb-7">
-        Experience:
+    <flux:heading class="w-9/12 leading-9 mx-auto text-[20px]! font-medium text-center mb-7">
+        // experience
     </flux:heading>
 
     <div class="flex justify-center p-[3.5px] mx-auto border shadow-lg border-zinc-600 bg-zinc-800 md:max-w-xl">
         <div class="w-full p-5 pr-2 border border-zinc-600 inset-shadow-lg text-zinc-50 bg-zinc-900">
             <ul class="space-y-8 flex flex-col">
-                @foreach ($work_experience as $work)
+                @foreach ($experiences as $experience)
                     <li>
                         <div class="flex items-center">
-                            <flux:avatar src="{{ asset($work['image']) }}"
+                            <flux:avatar src="{{ asset($experience['image']) }}"
                                 class="p-2 bg-zinc-800 after:inset-ring-[1.5px]! after:inset-ring-zinc-600!" />
 
                             <div class="flex pl-4 -space-y-1 flex-col">
                                 <a class="duration-200 ease-in-out cursor-pointer hover:text-zinc-400"
-                                    href="{{ $work['url'] }}" target="_blank">
+                                    href="{{ $experience['url'] }}" target="_blank">
                                     <h1 class="text-md font-medium">
-                                        {{ $work['company'] }}
+                                        {{ $experience['company'] }}
                                     </h1>
                                 </a>
 
-                                @if (count($work['positions']) === 1)   
+                                @if (count($experience['positions']) === 1)   
                                     <h2 class="text-xs sm:text-sm">
-                                        {{ $work['positions'][0]['title'] }}
+                                        {{ $experience['positions'][0]['title'] }}
                                     </h2>
                                 @else
                                     <h2 class="text-xs sm:text-sm">
-                                        {{ $work['total_duration'] }}
+                                        {{ $experience['total_duration'] }}
                                     </h2>
                                 @endif
                             </div>
                         </div>
 
                         <div class="font-normal -mt-1 sm:mt-auto text-white/70 text-[11px] sm:text-xs -tracking-[0.01em] sm:tracking-normal pl-14">
-                            @if (count($work['positions']) === 1)
+                            @if (count($experience['positions']) === 1)
                                 <p>
-                                    {{ $work['positions'][0]['time'] }}
+                                    {{ $experience['positions'][0]['time'] }}
                                     <span>•</span>
-                                    {{ $work['total_duration'] }}
+                                    {{ $experience['total_duration'] }}
                                 </p>
                             @endif
                         </div>
 
-                        @if (count($work['positions']) > 1) 
+                        @if (count($experience['positions']) > 1) 
                             <div class="pl-5 mt-3 flex flex-col space-y-5">
                                 <flux:timeline
                                     class="[--flux-timeline-item-gap:1.5rem] [--flux-timeline-content-gap:2.1rem] sm:[--flux-timeline-content-gap:2rem]"
                                     align="start"
                                 >
-                                    @foreach ($work['positions'] as $position)
+                                    @foreach ($experience['positions'] as $position)
                                         <flux:timeline.item size="sm" class="-ml-0.5">
                                             <flux:timeline.indicator variant="bare">
                                                 <div class="size-1.5 rounded-full bg-zinc-400"></div>

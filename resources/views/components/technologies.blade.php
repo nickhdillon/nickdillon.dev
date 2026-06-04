@@ -44,8 +44,8 @@
 @endphp
 
 <div class="flex flex-col items-center justify-center mt-32 sm:mt-40 text-zinc-50">
-    <flux:heading class="w-9/12 mb-3 leading-9 text-[24px]! font-medium text-center">
-        Stack:
+    <flux:heading class="w-9/12 leading-9 text-[20px]! font-medium text-center">
+        // stack
     </flux:heading>
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-10 max-w-5xl">

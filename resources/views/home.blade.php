@@ -21,7 +21,7 @@
 
             <x-intro />
 
-            <x-work />
+            <x-experience />
 
             <x-technologies />
 
