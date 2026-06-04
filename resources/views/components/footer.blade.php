@@ -13,8 +13,10 @@
             </div>
         </div>
 
-        <h1>
-            &copy; {{ now()->format('Y') }} Nick Dillon
+        <h1 class="flex items-center space-x-2">
+            <flux:icon name="copyright" class="size-4" />
+            
+            <span>{{ now()->format('Y') }} Nick Dillon</span>
         </h1>
     </footer>
 </div>

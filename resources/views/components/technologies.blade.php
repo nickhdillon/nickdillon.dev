@@ -43,9 +43,9 @@
     ];
 @endphp
 
-<div class="flex flex-col items-center justify-center mt-32 sm:mt-40 text-zinc-50">
+<div id="stack" class="flex flex-col items-center justify-center mt-32 sm:mt-40 text-zinc-50 scroll-mt-24">
     <flux:heading class="w-9/12 leading-9 text-[20px]! font-medium text-center">
-        // stack
+        Stack
     </flux:heading>
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-10 max-w-5xl">

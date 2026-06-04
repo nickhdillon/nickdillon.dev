@@ -23,10 +23,10 @@
 
 <div class="flex flex-col items-center justify-center p-4 mt-24 mb-4 sm:mt-32 text-zinc-50">
     <flux:heading class="w-7/12 leading-9 text-[20px]! font-medium mx-auto mb-8 text-center">
-        // projects
+        Projects
     </flux:heading>
 
-    <div class="flex flex-col px-3 gap-6 sm:gap-8 lg:flex-row text-zinc-800">
+    <div id="projects" class="flex flex-col px-3 gap-6 sm:gap-8 lg:flex-row text-zinc-800 scroll-mt-24">
         @foreach ($projects as $project)
             <a href="{{ $project['url'] }}" target="_blank"
                 class="max-w-sm duration-200 ease-in-out border p-[4px] shadow-xl bg-zinc-800 border-zinc-600 hover:shadow-red-500/20 hover:scale-105">

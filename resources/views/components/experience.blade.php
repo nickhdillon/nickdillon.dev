@@ -77,9 +77,9 @@
         });
 @endphp
 
-<div class="mt-32 px-7 sm:mt-40 text-zinc-50">
+<div id="experience" class="mt-32 px-7 sm:mt-40 text-zinc-50 scroll-mt-24">
     <flux:heading class="w-9/12 leading-9 mx-auto text-[20px]! font-medium text-center mb-7">
-        // experience
+        Experience
     </flux:heading>
 
     <div class="flex justify-center p-[3.5px] mx-auto border shadow-lg border-zinc-600 bg-zinc-800 md:max-w-xl">

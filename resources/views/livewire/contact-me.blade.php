@@ -40,7 +40,7 @@ new class extends Component {
         <x-sentry-button color="red">Send me a message!</x-sentry-button>
     </flux:modal.trigger>
 
-    <flux:modal name="contact-form" class="w-86 sm:w-full text-left">
+    <flux:modal name="contact-form" class="w-86 sm:w-full ring-zinc-600! text-left">
         <form wire:submit='sendEmail' class="space-y-6">
             <flux:heading size="lg" class="font-semibold -mt-1!">
                 Contact Me
