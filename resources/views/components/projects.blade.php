@@ -23,7 +23,7 @@
 
 <div class="flex flex-col items-center justify-center p-4 mt-24 mb-4 sm:mt-32 text-zinc-50">
     <flux:heading class="w-7/12 leading-9 text-[24px]! font-medium mx-auto mb-8 text-center">
-        A couple of my projects:
+        Projects:
     </flux:heading>
 
     <div class="flex flex-col px-3 gap-6 sm:gap-8 lg:flex-row text-zinc-800">

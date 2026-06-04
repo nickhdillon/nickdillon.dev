@@ -79,7 +79,7 @@
 
 <div class="mt-32 px-7 sm:mt-40 text-zinc-50">
     <flux:heading class="w-9/12 leading-9 mx-auto text-[24px]! font-medium text-center mb-7">
-        My work experience:
+        Experience:
     </flux:heading>
 
     <div class="flex justify-center p-[3.5px] mx-auto border shadow-lg border-zinc-600 bg-zinc-800 md:max-w-xl">
@@ -134,7 +134,7 @@
                                             </flux:timeline.indicator>
 
                                             <flux:timeline.content>
-                                                <flux:text class="text-zinc-50 text-[11px] sm:text-sm -tracking-[0.01em] sm:tracking-normal">
+                                                <flux:text class="text-zinc-50 text-xs sm:text-sm -tracking-[0.01em] sm:tracking-normal">
                                                     {{ $position['title'] }}
                                                 </flux:text>
 
