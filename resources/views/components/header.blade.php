@@ -21,7 +21,7 @@
                 class="flex items-center justify-center"
                 x-on:click="menuOpen = ! menuOpen"
             >
-                <flux:icon name="bars-3" class="size-5" />
+                <flux:icon name="bars-3" class="size-6" />
             </button>
 
             <div
