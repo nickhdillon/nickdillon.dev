@@ -1,4 +1,4 @@
-<div class="w-full text-xl -tracking-[0.01em]! font-medium text-zinc-50 sm:w-full">
+<div class="w-10/12 sm:w-full text-xl sm:-tracking-[0.01em]! font-medium text-zinc-50">
     I'm a software developer, working with
 
     <span
