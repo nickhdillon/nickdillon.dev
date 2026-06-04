@@ -1,4 +1,4 @@
-<div class="w-9/12 text-xl font-medium text-zinc-50 sm:w-full">
+<div class="w-full text-xl -tracking-[0.01em]! font-medium text-zinc-50 sm:w-full">
     I'm a software developer, working with
 
     <span
@@ -10,5 +10,6 @@
             'TypeScript.',
             'Docker.'
         ]"
+        class="-tracking-[0.01em]!"
     />
 </div>

@@ -1,3 +1,6 @@
+/* tweakflux:fonts:start */
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+/* tweakflux:fonts:end */
 @import 'tailwindcss';
 @import '../../vendor/livewire/flux/dist/flux.css';
 
@@ -66,3 +69,5 @@ textarea:focus[data-flux-control] {
 [data-flux-label] {
     @apply  !text-zinc-50;
 }
+
+@import "./tweakflux-theme.css";

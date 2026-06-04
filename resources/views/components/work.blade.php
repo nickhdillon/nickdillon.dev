@@ -78,40 +78,40 @@
 @endphp
 
 <div class="mt-32 px-7 sm:mt-40 text-zinc-50">
-    <flux:heading class="w-9/12 leading-9 mx-auto !text-[30px] font-medium text-center mb-7">
+    <flux:heading class="w-9/12 leading-9 mx-auto text-[24px]! font-medium text-center mb-7">
         My work experience:
     </flux:heading>
 
-    <div class="flex justify-center p-[3.5px] mx-auto border shadow-lg border-zinc-700 rounded-[12px] bg-zinc-800 md:max-w-xl">
-        <div class="w-full p-5 pr-2 border rounded-[8px] border-zinc-700 inset-shadow-lg text-zinc-50 bg-zinc-900">
+    <div class="flex justify-center p-[3.5px] mx-auto border shadow-lg border-zinc-600 bg-zinc-800 md:max-w-xl">
+        <div class="w-full p-5 pr-2 border border-zinc-600 inset-shadow-lg text-zinc-50 bg-zinc-900">
             <ul class="space-y-8 flex flex-col">
                 @foreach ($work_experience as $work)
                     <li>
                         <div class="flex items-center">
                             <flux:avatar src="{{ asset($work['image']) }}"
-                                class="p-2 bg-zinc-800 after:inset-ring-[1.5px]! after:inset-ring-zinc-700!" />
+                                class="p-2 bg-zinc-800 after:inset-ring-[1.5px]! after:inset-ring-zinc-600!" />
 
                             <div class="flex pl-4 -space-y-1 flex-col">
                                 <a class="duration-200 ease-in-out cursor-pointer hover:text-zinc-400"
                                     href="{{ $work['url'] }}" target="_blank">
-                                    <h1 class="text-lg font-medium">
+                                    <h1 class="text-md font-medium">
                                         {{ $work['company'] }}
                                     </h1>
                                 </a>
 
                                 @if (count($work['positions']) === 1)   
-                                    <h2 class="text-sm">
+                                    <h2 class="text-xs sm:text-sm">
                                         {{ $work['positions'][0]['title'] }}
                                     </h2>
                                 @else
-                                    <h2 class="text-sm">
+                                    <h2 class="text-xs sm:text-sm">
                                         {{ $work['total_duration'] }}
                                     </h2>
                                 @endif
                             </div>
                         </div>
 
-                        <div class="font-normal text-zinc-400 text-xs pl-14">
+                        <div class="font-normal -mt-1 sm:mt-auto text-white/70 text-[11px] sm:text-xs -tracking-[0.01em] sm:tracking-normal pl-14">
                             @if (count($work['positions']) === 1)
                                 <p>
                                     {{ $work['positions'][0]['time'] }}
@@ -134,9 +134,11 @@
                                             </flux:timeline.indicator>
 
                                             <flux:timeline.content>
-                                                <flux:heading>{{ $position['title'] }}</flux:heading>
+                                                <flux:text class="text-zinc-50 text-[11px] sm:text-sm -tracking-[0.01em] sm:tracking-normal">
+                                                    {{ $position['title'] }}
+                                                </flux:text>
 
-                                                <flux:text size="sm">
+                                                <flux:text class="text-[11px] sm:text-xs -tracking-[0.01em] sm:tracking-normal">
                                                     {{ $position['time'] }}
 
                                                     @if ($position['duration'])

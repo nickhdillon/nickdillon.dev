@@ -37,16 +37,7 @@ new class extends Component {
 
 <div x-init="() => document.documentElement.classList.add('dark')">
     <flux:modal.trigger name="contact-form">
-        <div class="relative inline-flex w-full group/button">
-            <div
-                class="absolute transition-all duration-1000 bg-accent -inset-px rounded-xl blur-lg group-hover/button:opacity-100 group-hover/button:-inset-1 group-hover/button:duration-200 animate-pulse">
-            </div>
-
-            <button class="relative text-[17px]! inline-flex items-center justify-center w-full px-4 py-2 text-lg font-medium text-white transition-all duration-300 ease-in-out bg-accent sm:w-auto hover:scale-110 rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent"
-                role="button">
-                Send me a message!
-            </button>
-        </div>
+        <x-sentry-button color="red">Send me a message!</x-sentry-button>
     </flux:modal.trigger>
 
     <flux:modal name="contact-form" class="w-86 sm:w-full text-left">
@@ -82,9 +73,7 @@ new class extends Component {
             <div class="flex">
                 <flux:spacer />
 
-                <flux:button type="submit" variant="primary" class="text-zinc-100! h-9!">
-                    Send
-                </flux:button>
+                <x-sentry-button size="sm" type="submit" color="red">Send</x-sentry-button>
             </div>
         </form>
     </flux:modal>

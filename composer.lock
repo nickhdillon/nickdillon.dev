@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8f17b9f6e90a1c6467991b81ca9b8d3b",
+    "content-hash": "75aabc66de209793c5d9631c4e093a32",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -7093,6 +7093,60 @@
                 "source": "https://github.com/Jean85/pretty-package-versions/tree/2.1.1"
             },
             "time": "2025-03-19T14:43:43+00:00"
+        },
+        {
+            "name": "joshcirre/tweakflux",
+            "version": "v1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/joshcirre/tweakflux.git",
+                "reference": "e5aad2a9bfede3ebdbb827456220f52c80d1ffc7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/joshcirre/tweakflux/zipball/e5aad2a9bfede3ebdbb827456220f52c80d1ffc7",
+                "reference": "e5aad2a9bfede3ebdbb827456220f52c80d1ffc7",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/prompts": "^0.3",
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "pestphp/pest": "^3.0 || ^4.0"
+            },
+            "bin": [
+                "bin/tweakflux"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "TweakFlux\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Josh Cirre",
+                    "homepage": "https://github.com/joshcirre"
+                }
+            ],
+            "description": "Deep theming for Flux UI. Override Tailwind v4 CSS custom properties to transform every Flux component.",
+            "keywords": [
+                "cli",
+                "flux",
+                "livewire",
+                "tailwind",
+                "theming"
+            ],
+            "support": {
+                "issues": "https://github.com/joshcirre/tweakflux/issues",
+                "source": "https://github.com/joshcirre/tweakflux/tree/v1.6.0"
+            },
+            "time": "2026-02-13T23:00:16+00:00"
         },
         {
             "name": "laravel/pail",
