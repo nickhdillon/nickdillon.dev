@@ -29,7 +29,7 @@
                 x-show="menuOpen"
                 x-transition
                 x-on:click="menuOpen = false"
-                class="absolute right-0 top-full mt-3 z-50 flex w-40 flex-col divide-y divide-zinc-600 border border-zinc-600 bg-zinc-700 [&>a]:w-full [&>a]:p-2.5"
+                class="absolute right-0 top-full mt-1.5 z-50 flex w-40 flex-col divide-y divide-zinc-600 border border-zinc-600 bg-zinc-700 [&>a]:w-full [&>a]:p-2.5"
             >
                 <x-nav-link name="experience" />
 
