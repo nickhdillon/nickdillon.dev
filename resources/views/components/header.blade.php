@@ -15,28 +15,28 @@
             <x-nav-link name="projects" />
         </div>
 
-        <flux:dropdown class="sm:hidden flex items-center">
-            <button>
-                <flux:icon name="bars-3" class="stroke-white!" />
+       <div class="relative flex sm:hidden">
+            <button
+                type="button"
+                class="flex items-center justify-center"
+                x-on:click="menuOpen = ! menuOpen"
+            >
+                <flux:icon name="bars-3" class="size-5" />
             </button>
 
-            <flux:menu>
-                <flux:menu.item>
-                    <x-nav-link name="experience" />
-                </flux:menu.item>
+            <div
+                x-cloak
+                x-show="menuOpen"
+                x-transition
+                x-on:click="menuOpen = false"
+                class="absolute right-0 top-full mt-3 z-50 flex w-40 flex-col divide-y divide-zinc-600 border border-zinc-600 bg-zinc-700 [&>a]:w-full [&>a]:p-2.5"
+            >
+                <x-nav-link name="experience" />
 
-                <flux:menu.separator />
+                <x-nav-link name="stack" />
 
-                <flux:menu.item>
-                    <x-nav-link name="stack" />
-                </flux:menu.item>
-
-                <flux:menu.separator />
-
-                <flux:menu.item>
-                    <x-nav-link name="projects" />
-                </flux:menu.item>
-            </flux:menu>
-        </flux:dropdown>
+                <x-nav-link name="projects" />
+            </div>
+        </div>
     </nav>
 </div>
