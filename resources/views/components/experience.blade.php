@@ -77,14 +77,19 @@
         });
 @endphp
 
-<div id="experience" class="mt-32 px-7 sm:mt-40 text-zinc-50 scroll-mt-24">
+<div id="experience" class="mt-32 sm:mt-40 text-zinc-50 scroll-mt-24">
     <flux:heading class="w-9/12 leading-9 mx-auto text-[20px]! font-medium text-center mb-7">
         Experience
     </flux:heading>
 
-    <div class="flex justify-center p-[3.5px] mx-auto border shadow-lg border-zinc-600 bg-zinc-800 md:max-w-xl">
-        <div class="w-full p-5 pr-2 border border-zinc-600 inset-shadow-lg text-zinc-50 bg-zinc-900">
-            <ul class="space-y-8 flex flex-col">
+    <div class="border-y mx-auto border-zinc-600">
+        <div class="w-11/12 flex md:max-w-xl mx-auto relative border-x border-zinc-600 text-zinc-50">
+            <flux:icon.square class="absolute top-0 left-0 -translate-x-[58%] -translate-y-[58%] fill-zinc-400 stroke-zinc-400 size-1.5" />
+            <flux:icon.square class="absolute top-0 right-0 translate-x-[58%] -translate-y-[58%] fill-zinc-400 stroke-zinc-400 size-1.5" />
+            <flux:icon.square class="absolute bottom-0 left-0 -translate-x-[58%] translate-y-[58%] fill-zinc-400 stroke-zinc-400 size-1.5" />
+            <flux:icon.square class="absolute bottom-0 right-0 translate-x-[58%] translate-y-[58%] fill-zinc-400 stroke-zinc-400 size-1.5" />
+
+            <ul class="space-y-8 p-5 flex flex-col">
                 @foreach ($experiences as $experience)
                     <li>
                         <div class="flex items-center">
@@ -130,7 +135,7 @@
                                     @foreach ($experience['positions'] as $position)
                                         <flux:timeline.item size="sm" class="-ml-0.5">
                                             <flux:timeline.indicator variant="bare">
-                                                <div class="size-1.5 rounded-full bg-zinc-400"></div>
+                                                <flux:icon.square class="fill-zinc-400 stroke-zinc-400 size-1.5" />
                                             </flux:timeline.indicator>
 
                                             <flux:timeline.content>
