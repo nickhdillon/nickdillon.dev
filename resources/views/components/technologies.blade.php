@@ -1,5 +1,5 @@
 @php
-    $technologies = [
+    $technologies = collect([
         [
             'url' => 'https://tailwindcss.com',
             'image' => 'tailwindcss.svg',
@@ -40,27 +40,57 @@
             'image' => 'docker.svg',
             'title' => 'Docker',
         ],
-    ];
+    ]);
 @endphp
 
-<div id="stack" class="flex flex-col items-center justify-center mt-32 sm:mt-40 text-zinc-50 scroll-mt-24">
-    <flux:heading class="w-9/12 leading-9 text-[20px]! font-medium text-center">
+<div id="stack" class="mt-32 sm:mt-40 text-zinc-50 scroll-mt-24">
+    <flux:heading class="w-9/12 leading-9 mx-auto text-[20px]! font-medium text-center mb-7">
         Stack
     </flux:heading>
 
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-10 max-w-5xl">
-        @foreach ($technologies as $technology)
-            <div class="p-2 w-40 mx-auto transition hover:scale-110">
-                <a href="{{ $technology['url'] }}" target="_blank">
-                    <div class="flex justify-center mb-2">
-                        <img src="{{ asset($technology['image']) }}" />
-                    </div>
+    <div class="mx-auto border-y border-zinc-600">
+        <div class="md:hidden">
+            @foreach ($technologies->chunk(2) as $row)
+                <div class="flex border-b border-zinc-600 last:border-b-0">
+                    @foreach ($row as $technology)
+                        <div class="flex-1 border-r border-zinc-600 last:border-r-0">
+                            <div class="mx-auto w-44 px-4 py-5 transition hover:scale-110">
+                                <a href="{{ $technology['url'] }}" target="_blank">
+                                    <div class="mb-2 flex justify-center">
+                                        <img src="{{ asset($technology['image']) }}" />
+                                    </div>
 
-                    <h1 class="text-lg font-medium text-center">
-                        {{ $technology['title'] }}
-                    </h1>
-                </a>
-            </div>
-        @endforeach
+                                    <h1 class="text-center text-lg font-medium">
+                                        {{ $technology['title'] }}
+                                    </h1>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @endforeach
+        </div>
+
+        <div class="hidden md:block">
+            @foreach ($technologies->chunk(4) as $row)
+                <div class="flex border-b border-zinc-600 last:border-b-0">
+                    @foreach ($row as $technology)
+                        <div class="flex-1 border-r border-zinc-600 last:border-r-0">
+                            <div class="mx-auto w-44 px-4 py-6 transition hover:scale-110">
+                                <a href="{{ $technology['url'] }}" target="_blank">
+                                    <div class="mb-2 flex justify-center">
+                                        <img src="{{ asset($technology['image']) }}" />
+                                    </div>
+
+                                    <h1 class="text-center text-lg font-medium">
+                                        {{ $technology['title'] }}
+                                    </h1>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @endforeach
+        </div>
     </div>
 </div>
