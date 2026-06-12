@@ -46,7 +46,7 @@
                         <div class="flex items-center gap-4">
                             <img
                                 class="size-10 rounded object-cover text-zinc-50 shadow-2xl shadow-red-500/20"
-                                src="{{ asset($project['image']) }}"
+                                src="{{ asset($project['image']) }}?v={{ filemtime(public_path($project['image'])) }}"
                                 alt="{{ $project['title'] }}"
                             />
 
