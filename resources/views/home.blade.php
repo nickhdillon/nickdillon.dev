@@ -15,7 +15,7 @@
         @livewireStyles
     </head>
 
-    <body class="min-h-screen bg-linear-to-b bg-zinc-800/50 text-zinc-100">
+    <body class="min-h-screen bg-linear-to-b bg-[#0C0C0C] text-zinc-100">
         <x-header />
 
         <x-intro />
