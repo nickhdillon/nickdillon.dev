@@ -31,7 +31,7 @@
 
         <div class="mx-auto grid grid-cols-1 lg:grid-cols-3">
             @foreach ($projects as $project)
-                <div class="border-b border-zinc-600/50 p-6 last:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0">
+                <div class="border-b border-zinc-600/50 p-5 last:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0">
                     <a
                         href="{{ $project['url'] }}"
                         target="_blank"
@@ -48,7 +48,7 @@
 
                             <ul class="flex flex-wrap gap-1.5">
                                 @foreach ($project['technologies'] as $tech)
-                                    <li class="inline-block rounded-md bg-red-500 px-2 py-0.5 text-[10px] font-medium text-zinc-50 shadow-md shadow-red-500/15 sm:px-1.5 sm:py-[.8px] sm:text-[12.5px]">
+                                    <li class="inline-block rounded-md bg-red-500 px-2 py-0.5 text-[11px] font-medium text-zinc-50 shadow-md shadow-red-500/15 sm:px-1.5 sm:py-[.8px] sm:text-[12.5px]">
                                         {{ $tech }}
                                     </li>
                                 @endforeach
