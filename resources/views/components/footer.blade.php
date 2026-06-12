@@ -1,6 +1,4 @@
-<div class="pb-10 text-slate-50">
-    <div class="border-t border-white/15 w-10/12 max-w-[450px] mx-auto"></div>
-
+<div class="pb-10 pt-4 text-slate-50">
     <footer class="flex flex-col items-center justify-center p-6 pb-4 mt-2 space-y-4 text-center">
         <div class="max-w-lg">
             <div
