@@ -5,7 +5,7 @@
             'image' => 'audio-archive.png',
             'title' => 'Audio Archive',
             'description' => 'Organize, stream, and enjoy your personal music collection from anywhere',
-            'color' => 'group-hover:text-[#FFB900]',
+            'color' => 'group-hover:text-[#FFB900] group-active:text-[#FFB900] group-focus:text-[#FFB900]',
             'technologies' => ['Tailwind', 'Alpine.js', 'Laravel', 'Livewire'],
         ],
         'pure-finance' => [
@@ -13,7 +13,7 @@
             'image' => 'pure-finance.png',
             'title' => 'Pure Finance',
             'description' => 'A distraction-free way to track finances and understand where your money goes',
-            'color' => 'group-hover:text-[#06D492]',
+            'color' => 'group-hover:text-[#06D492] group-active:text-[#06D492] group-focus:text-[#06D492]',
             'technologies' => ['Tailwind', 'Alpine.js', 'Laravel', 'Livewire'],
         ],
         'movie-vault' => [
@@ -21,7 +21,7 @@
             'image' => 'movie-vault.png',
             'title' => 'Movie Vault',
             'description' => 'Catalog your movie and TV collection while keeping a wishlist for future additions',
-            'color' => 'group-hover:text-[#3073E8]',
+            'color' => 'group-hover:text-[#3073E8] group-active:text-[#3073E8] group-focus:text-[#3073E8]',
             'technologies' => ['Tailwind', 'Alpine.js', 'Laravel', 'Livewire'],
         ],
     ];
