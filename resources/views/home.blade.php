@@ -15,22 +15,20 @@
         @livewireStyles
     </head>
 
-    <body class="min-h-screen bg-linear-to-b bg-zinc-800 from-zinc-900/40 from-85% to-zinc-950 text-zinc-100">
-        <div class="bg-grid bg-repeat">
-            <x-header />
+    <body class="min-h-screen bg-linear-to-b bg-zinc-800/50 text-zinc-100">
+        <x-header />
 
-            <x-intro />
+        <x-intro />
 
-            <x-experience />
+        <x-experience />
 
-            <x-technologies />
+        <x-technologies />
 
-            <x-projects />
+        <x-projects />
 
-            <x-footer />
+        <x-footer />
 
-            <flux:toast />
-        </div>
+        <flux:toast />
         
         @fluxScripts
         @livewireScriptConfig

@@ -48,8 +48,8 @@
         Stack
     </flux:heading>
 
-    <div class="border-y mx-auto border-zinc-600 mt-10 p-4">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full md:w-9/12 mx-auto">
+    <div class="border-y bg-grid mx-auto border-zinc-600/50 mt-10 p-4">
+        <div class="z-10 grid grid-cols-2 md:grid-cols-4 gap-4 w-full md:w-9/12 mx-auto">
             @foreach ($technologies as $technology)
                 <div class="w-full p-4 max-w-56 mx-auto transition hover:scale-110">
                     <a href="{{ $technology['url'] }}" target="_blank">

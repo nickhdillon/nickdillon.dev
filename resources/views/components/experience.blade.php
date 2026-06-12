@@ -82,19 +82,21 @@
         Experience
     </flux:heading>
 
-    <div class="border-y mx-auto border-zinc-600">
-        <div class="w-11/12 flex md:max-w-xl mx-auto relative border-x border-zinc-600 text-zinc-50">
-            <flux:icon.square class="absolute top-0 left-0 -translate-x-[58%] -translate-y-[58%] fill-zinc-400 stroke-zinc-400 size-1.5" />
-            <flux:icon.square class="absolute top-0 right-0 translate-x-[58%] -translate-y-[58%] fill-zinc-400 stroke-zinc-400 size-1.5" />
-            <flux:icon.square class="absolute bottom-0 left-0 -translate-x-[58%] translate-y-[58%] fill-zinc-400 stroke-zinc-400 size-1.5" />
-            <flux:icon.square class="absolute bottom-0 right-0 translate-x-[58%] translate-y-[58%] fill-zinc-400 stroke-zinc-400 size-1.5" />
+    <div class="border-y mx-auto relative border-zinc-600/50">
+        <div class="bg-points absolute -z-10 inset-0 mask-radial-to-100% mask-radial-at-center"></div>
+
+        <div class="w-11/12 flex bg-[#0C0C0C] md:max-w-xl mx-auto relative border-x border-zinc-600/50 text-zinc-50">
+            <flux:icon.square class="absolute top-0 left-0 -translate-x-[58%] -translate-y-[58%] fill-zinc-500 stroke-zinc-500 size-1.5" />
+            <flux:icon.square class="absolute top-0 right-0 translate-x-[58%] -translate-y-[58%] fill-zinc-500 stroke-zinc-500 size-1.5" />
+            <flux:icon.square class="absolute bottom-0 left-0 -translate-x-[58%] translate-y-[58%] fill-zinc-500 stroke-zinc-500 size-1.5" />
+            <flux:icon.square class="absolute bottom-0 right-0 translate-x-[58%] translate-y-[58%] fill-zinc-500 stroke-zinc-500 size-1.5" />
 
             <ul class="space-y-8 p-5 flex flex-col">
                 @foreach ($experiences as $experience)
                     <li>
                         <div class="flex items-center">
                             <flux:avatar src="{{ asset($experience['image']) }}"
-                                class="p-2 bg-zinc-800 after:inset-ring-[1.5px]! after:inset-ring-zinc-600!" />
+                                class="p-2 bg-zinc-800/10 after:inset-ring-[1.5px]! after:inset-ring-zinc-600/50!" />
 
                             <div class="flex pl-4 -space-y-1 flex-col">
                                 <a class="duration-200 ease-in-out cursor-pointer hover:text-zinc-400"
@@ -135,7 +137,7 @@
                                     @foreach ($experience['positions'] as $position)
                                         <flux:timeline.item size="sm" class="-ml-0.5">
                                             <flux:timeline.indicator variant="bare">
-                                                <flux:icon.square class="fill-zinc-400 stroke-zinc-400 size-1.5" />
+                                                <flux:icon.square class="fill-zinc-500 stroke-zinc-500 size-1.5" />
                                             </flux:timeline.indicator>
 
                                             <flux:timeline.content>

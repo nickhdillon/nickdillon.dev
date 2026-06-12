@@ -1,6 +1,6 @@
 <div
     x-data="{ active: '', menuOpen: false }"
-    class="sticky top-4 sm:top-5 w-11/12 max-w-6xl mx-auto shadow-lg z-10 p-3 sm:p-4 border border-white/15 backdrop-blur-md text-zinc-50"
+    class="sticky top-4 sm:top-5 w-11/12 max-w-6xl mx-auto shadow-lg z-10 p-3 sm:p-4 border border-zinc-600/50 backdrop-blur-md text-zinc-50"
 >
     <nav class="flex items-center justify-between">
         <a href="{{ route('home') }}" wire:navigate>
@@ -31,7 +31,7 @@
                 x-on:click="menuOpen = false"
                 x-on:click.outside="menuOpen = false"
                 x-on:scroll.window="menuOpen = false"
-                class="absolute right-0 top-full mt-1.5 z-50 flex w-50 flex-col divide-y divide-zinc-600 border border-zinc-600 bg-zinc-700 [&>a]:w-full [&>a]:p-2.5"
+                class="absolute right-0 top-full mt-1.5 z-50 flex w-50 flex-col divide-y divide-zinc-600/50 border border-zinc-600/50 bg-zinc-700 [&>a]:w-full [&>a]:p-2.5"
             >
                 <x-nav-link name="experience" />
 

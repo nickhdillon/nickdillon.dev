@@ -26,10 +26,12 @@
         Projects
     </flux:heading>
 
-    <div class="border-y mx-auto border-zinc-600">
+    <div class="border-y mx-auto relative border-zinc-600/50">
+        <div class="bg-points absolute -z-10 inset-0 opacity-60 mask-radial-to-100% mask-radial-at-center"></div>
+
         <div class="mx-auto grid grid-cols-1 lg:grid-cols-3">
             @foreach ($projects as $project)
-                <div class="border-b border-zinc-600 p-6 last:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0">
+                <div class="border-b border-zinc-600/50 p-6 last:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0">
                     <a
                         href="{{ $project['url'] }}"
                         target="_blank"
